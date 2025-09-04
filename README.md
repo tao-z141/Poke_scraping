@@ -18,11 +18,11 @@
 ### 1. Connexion à l’instance EC2
 ```bash
 ssh -i ~/cle.pem ubuntu@IP_de_l_instance
-
+```
 /cle.pem : chemin vers ta clé privée téléchargée depuis AWS.
 
 IP_de_l_instance : adresse publique de ton instance EC2 (IPv4 Public IP).
-```
+
 
 ### 2. Mise à jour du système
 ```bash
@@ -46,11 +46,11 @@ python3 scraper.py
 ```
 
 ## Le script :
-```bash
+
 Télécharge les images Pokémon depuis Bulbapedia.
 
 Classe les fichiers localement par génération.
 
 Uploade chaque image dans ton bucket S3 (dans images/Generation_I/...)
-```
+
 
