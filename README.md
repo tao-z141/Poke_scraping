@@ -1,5 +1,6 @@
 # Objectif
-Ce Tp permet de **scraper toutes les images Pokémon depuis Bulbapedia** et de les stocker dans un **bucket S3** organisé par génération (`images/Generation_I/...`).  
+
+**Scraper toutes les images Pokémon depuis Bulbapedia** et les stocker dans un **bucket S3** organisé par génération (`images/Generation_I/...`).  
 
 ---
 
@@ -14,19 +15,28 @@ Ce Tp permet de **scraper toutes les images Pokémon depuis Bulbapedia** et de l
 
 ## Installation sur EC2
 
-### 1. Mise à jour du système
+### 1. Connexion à l’instance EC2
+```bash
+ssh -i ~/cle.pem ubuntu@IP_de_l_instance
+
+/cle.pem : chemin vers ta clé privée téléchargée depuis AWS.
+
+IP_de_l_instance : adresse publique de ton instance EC2 (IPv4 Public IP).
+```
+
+### 2. Mise à jour du système
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-### 2. Installer Python et pip
+### 3. Installer Python et pip
 ```bash
 sudo apt install -y python3 python3-pip
 ```
-### 3. Installer les bibliothèques 
+### 4. Installer les bibliothèques 
 ```bash
 pip3 install requests beautifulsoup4 boto3
 ```
-### Configurer les identifiants AWS 
+### 5. Configurer les identifiants AWS 
 ```bash
 aws configure
 ```
